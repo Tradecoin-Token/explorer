@@ -167,3 +167,43 @@
     <script src="js/index.js"></script>
   </body>
 </html>
+
+
+<!------------Seperate Coding for Marquee------------>
+<html>
+  <head>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dynamic-marquee@1"></script>
+    <!-- <script type="text/javascript" src="dist/dynamic-marquee.js"></script> -->
+    <style>
+      #marquee {
+        position: fixed;
+        overflow: hidden;
+        margin: 0;
+        padding: 7px 0;
+        font-size: 14px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: ##00cc99;
+        color: #FFFFFF;
+        font-family: Verdana, Geneva, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="marquee"></div>
+    <script type="text/javascript">
+      var $marquee = document.getElementById('marquee');
+      var marquee = window.m = new dynamicMarquee.Marquee($marquee, { rate: -85 });
+      window.l = dynamicMarquee.loop(marquee, [
+        function() { return 'Welcome to Tradecoin Custom Blockchain Explorer.'; },
+        function() { return 'Tradecoin team is continuously focusing to develop new solutions for blockchain technology.'; },
+        function() { return 'Kindly Stay Tuned and connected with us.'; }
+      ], function() {
+        var $separator = document.createElement('div');
+        $separator.innerHTML = '&nbsp';
+        return $separator;
+      });
+    </script>
+  </body>
+</html>
